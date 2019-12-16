@@ -5,7 +5,7 @@ import BeachesContainer from './containers/BeachesContainer'
 
 class App extends Component {
   state= {
-    beaches:''
+    beaches: null
   }
   
   componentDidMount() {
@@ -22,11 +22,15 @@ class App extends Component {
   }
 
   render() { 
+    if (this.state.beaches === null) {
+      return 'loading'
+    } else {
     return (
       <div className='hello'>
         <BeachesContainer data={this.state.beaches} />
       </div>
      )
+    }
   }
 }
 
