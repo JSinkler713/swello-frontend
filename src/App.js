@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import BeachesModel from './models/Beaches'
 import BeachesContainer from './containers/BeachesContainer'
+import Home from './components/Home'
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   state= {
@@ -27,7 +29,12 @@ class App extends Component {
     } else {
     return (
       <div className='hello'>
-        <BeachesContainer data={this.state.beaches} />
+        <Switch> 
+          <Route exact path='/' component={ Home }/>
+          <Route exact path='/beaches' render={routerProps=> {
+            return <BeachesContainer data={this.state.beaches} />
+          }} />
+        </Switch>
       </div>
      )
     }
