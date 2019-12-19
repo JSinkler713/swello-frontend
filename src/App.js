@@ -13,7 +13,7 @@ class App extends Component {
   componentDidMount() {
     this.getAllBeaches()
   }
-
+  
   getAllBeaches = () => {
     BeachesModel.all().then((result) => {
       console.log(result)
@@ -27,12 +27,12 @@ class App extends Component {
     if (this.state.beaches === null) {
       return 'loading'
     } else {
-    return (
+      return (
       <div className='hello'>
         <Switch> 
           <Route exact path='/' component={ Home }/>
           <Route exact path='/beaches' render={routerProps=> {
-            return <BeachesContainer data={this.state.beaches} />
+            return <BeachesContainer getbeaches={this.getAllBeaches}  data={this.state.beaches} />
           }} />
         </Switch>
       </div>

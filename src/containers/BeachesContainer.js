@@ -31,6 +31,7 @@ class BeachesContainer extends Component {
     }  
     BeachesModel.create(newBeach).then((res)=> {
       this.setState({createBeachName:'', createBeachDescription:'', boardTypeIds:[]})
+      this.props.getbeaches();
     }) 
   }
 
