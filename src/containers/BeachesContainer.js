@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BeachesModel from '../models/Beaches'
+import Beaches from '../components/Beaches'
 
 class BeachesContainer extends Component {
   state = {
@@ -68,8 +69,12 @@ class BeachesContainer extends Component {
   }
 
   render (){
-    return(
+    if (this.props.data === null) {
+      return 'loading'
+    } else {
+      return (
       <div>
+        <Beaches allBeaches={this.props.data} />
         <form type='input'>
           <input onChange={this.nameChange} id='beachName' placeholder='beach name'></input>
           <input onChange={this.descChange} id='description' placeholder='description'></input>
@@ -85,7 +90,8 @@ class BeachesContainer extends Component {
 
         </form>
       </div>
-    )
+      )
+    }
   }
 }
   
