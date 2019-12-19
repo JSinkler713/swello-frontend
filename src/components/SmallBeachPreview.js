@@ -8,7 +8,7 @@ class SmallBeachPreview extends Component {
   render(){
 
     return(
-      <div>
+      <div className='smallBeachPreview'>
         {this.props.name}
       </div>
     )

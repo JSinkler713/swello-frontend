@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BeachesModel from '../models/Beaches'
 import Beaches from '../components/Beaches'
+import './BeachesContainer.css'
 
 class BeachesContainer extends Component {
   state = {
@@ -75,6 +76,9 @@ class BeachesContainer extends Component {
       return (
       <div>
         <Beaches allBeaches={this.props.data} />
+        <h2>
+          Add your local beach and share what you shred with there!
+        </h2>
         <form type='input'>
           <input onChange={this.nameChange} id='beachName' placeholder='beach name'></input>
           <input onChange={this.descChange} id='description' placeholder='description'></input>

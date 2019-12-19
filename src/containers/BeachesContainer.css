@@ -1,0 +1,13 @@
+.beachPreviewContainer {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.smallBeachPreview {
+  display: flex;
+  width: 20%;
+  height: 100px;
+  border: 2px solid gray;
+  padding: 2%;
+  margin: 2%;
+}

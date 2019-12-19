@@ -4,7 +4,7 @@ import BeachesModel from './models/Beaches'
 import BeachesContainer from './containers/BeachesContainer'
 import Home from './components/Home'
 import { Switch, Route } from 'react-router-dom';
-
+import './containers/BeachesContainer.css' 
 class App extends Component {
   state= {
     beaches: null
