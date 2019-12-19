@@ -1,4 +1,17 @@
 
 .hello {
-  font-size: 3em;
+  font-size: 2em;
+}
+.nav {
+  display: flex;
+  text-align: space-between;
+}
+.active {
+  border:5px solid black;
+}
+
+.createBoardButton {
+  width: 25%;
+  height: 20px;
+  background: gray;
 }
