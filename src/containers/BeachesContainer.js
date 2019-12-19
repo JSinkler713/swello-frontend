@@ -7,12 +7,44 @@ class BeachesContainer extends Component {
     createBeachDescription:'such a great beach',
     boardTypeIds:[]
   }
-  
+
+  toggleArray = (number, array) => {
+    let notInArray=true
+    let i=0;
+    let newArray=[];
+    for(let item of array) {
+      if(number == item) {
+        notInArray=false
+        array.splice(i,0);
+
+      }else {
+        newArray.push(item)
+      }
+      i++
+    }
+    if(notInArray) {
+      newArray.push(number)
+    }
+      return newArray
+  }
+  //toggler = (boardId)=> {
+  //  let i=0
+  //  let bIds= {this.state.boardTypeIds}
+  //
+  //  for (id in bIds) {
+  //    if (id == boardId) {
+  //    bIds.pop(i);
+  //
+
+  //  let array = this.state.boardTypeIds.filter(id => id!= boardId)
+  //  console.log(array)
+ // }
   boardChoose = (e)=> {
     e.preventDefault();
     let boardTypeId = Number(e.target.value)
-    this.setState({boardTypeIds: [...this.state.boardTypeIds, boardTypeId]}) 
-    console.log(e.target.value)
+    let updated = this.toggleArray(boardTypeId, this.state.boardTypeIds);
+    console.log(updated);
+    this.setState({boardTypeIds: updated}) 
   }
   
   nameChange = (e)=> {

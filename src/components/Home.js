@@ -8,7 +8,7 @@ const Home = () => {
       Swello
       </header>
       <div className="nav">
-        <div>Boards</div><div>BoardTypes</div><div><Link to={'/beaches'}>Beaches</Link></div>
+        <div>Boards</div><div>BoardTypes</div><div><Link className='links' to={'/beaches'}>Beaches</Link></div>
       </div>
     </div>
   );
