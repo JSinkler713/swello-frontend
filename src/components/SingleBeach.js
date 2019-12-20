@@ -78,10 +78,13 @@ class SingleBeach extends Component {
     } 
     console.log('update beach')
     BeachesModel.update(updateBeach, '/'+oid).then((res)=> {
+      console.log('the response after update....', res)
+      if (res.status === 200) {
       this.props.updateAppState();
       this.setState({updatedBeachName:'', updatedBeachDescription:''})
+      this.props.history.push('/beaches')
+      } else { console.log('did NOT update beach')}
     })
-
   }
 
 

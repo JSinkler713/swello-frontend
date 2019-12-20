@@ -30,7 +30,7 @@ class BeachesModel {
       },
       body: JSON.stringify(beach)
     })
-      .then(response=> response.json())
+      .then(response=> response)
       .catch(error => console.log('could not update this beach', error));
   };
 
