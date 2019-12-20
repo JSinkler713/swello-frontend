@@ -18,3 +18,24 @@
   background-image: url('https://images.pexels.com/photos/345750/pexels-photo-345750.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
   background-size: cover;
 }
+.boardType{
+  min-height: 280px;
+  min-width: 15%;
+  background-size: contain;
+}
+
+.fish {
+  background-image: url('https://i.imgur.com/R1F30Ro.jpg');
+}
+.shortboard {
+  background-image: url('https://i.imgur.com/AoVgbLr.jpg');
+}
+.longboard {
+  background-image: url('https://i.imgur.com/jE05VFC.jpg');
+}
+.gun {
+  background-image: url('https://i.imgur.com/2kHhFnO.jpg');
+}
+.funboard {
+  background-image: url('https://i.imgur.com/mvQ6OtO.png');
+}

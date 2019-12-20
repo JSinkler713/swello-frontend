@@ -82,14 +82,15 @@ class BeachesContainer extends Component {
         </h2>
         <form type='input'>
           <input onChange={this.nameChange} id='beachName' placeholder='name here' value={this.state.createBeachName}></input>
-          <input onChange={this.descChange} id='description' placeholder='description' value={this.state.createBeachDescription}></input>
+          <textarea onChange={this.descChange} cols='30' rows='5' id='description' placeholder='description' value={this.state.createBeachDescription}></textarea>
           <p>Choose below which boards you should ride here!</p> 
           <div className="topicsContainer">
-            <button className={ this.state.boardTypeIds.includes(1) ? 'boardType active' : 'boardType' } onClick={this.boardChoose} value={1}>Shortboard</button>
-            <button className={ this.state.boardTypeIds.includes(2) ? 'boardType active' : 'boardType' } onClick={this.boardChoose} value={2}>Longboard</button>
-            <button className={ this.state.boardTypeIds.includes(3) ? 'boardType active' : 'boardType' } onClick={this.boardChoose} value={3}>fish</button>
-            <button className={ this.state.boardTypeIds.includes(4) ? 'boardType active' : 'boardType' } onClick={this.boardChoose} value={4}>gun</button>
-            <button className={ this.state.boardTypeIds.includes(5) ? 'boardType active' : 'boardType' } onClick={this.boardChoose} value={5}>funboard</button>
+            <button
+            className={ this.state.boardTypeIds.includes(1) ? 'boardType active shortboard' : 'boardType shortboard' } onClick={this.boardChoose} value={1}>Shortboard</button>
+            <button className={ this.state.boardTypeIds.includes(2) ? 'boardType active longboard' : 'boardType longboard' } onClick={this.boardChoose} value={2}>Longboard</button>
+            <button className={ this.state.boardTypeIds.includes(3) ? 'boardType fish active' : 'boardType fish' } onClick={this.boardChoose} value={3}>fish</button>
+            <button className={ this.state.boardTypeIds.includes(4) ? 'boardType active gun' : 'boardType gun' } onClick={this.boardChoose} value={4}>gun</button>
+            <button className={ this.state.boardTypeIds.includes(5) ? 'boardType active funboard' : 'boardType funboard' } onClick={this.boardChoose} value={5}>funboard</button>
             <button className='createBoardButton' onClick={this.createBeach}>CREATE NEW BEACH</button>
           </div>
 
