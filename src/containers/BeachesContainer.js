@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import BeachesModel from '../models/Beaches'
 import Beaches from '../components/Beaches'
 import './BeachesContainer.css'
+import { Link } from 'react-router-dom'
 
 class BeachesContainer extends Component {
   state = {
@@ -75,14 +76,17 @@ class BeachesContainer extends Component {
     } else {
       return (
       <div>
-        <header className='beachesContainer'>Beaches</header>
+        <header className='beachesContainer'>Beaches  <Link to='/'>Home</Link></header>
         <Beaches selectBeach={this.props.selectBeach} allBeaches={this.props.data} />
         <h2>
           Add your local beach and share what you shred with there!
         </h2>
         <form type='input'>
-          <input onChange={this.nameChange} id='beachName' placeholder='name here' value={this.state.createBeachName}></input>
-          <textarea onChange={this.descChange} cols='30' rows='5' id='description' placeholder='description' value={this.state.createBeachDescription}></textarea>
+          <div className='inputField'>
+            <input onChange={this.nameChange} id='beachName' placeholder='name here' value={this.state.createBeachName}></input>
+            <textarea onChange={this.descChange} cols='30' rows='5' id='description' placeholder='description' value={this.state.createBeachDescription}></textarea>
+            <button className='createBoardButton' onClick={this.createBeach}>CREATE NEW BEACH</button> 
+          </div>
           <p>Choose below which boards you should ride here!</p> 
           <div className="topicsContainer">
             <button
@@ -91,7 +95,6 @@ class BeachesContainer extends Component {
             <button className={ this.state.boardTypeIds.includes(3) ? 'boardType fish active' : 'boardType fish' } onClick={this.boardChoose} value={3}>fish</button>
             <button className={ this.state.boardTypeIds.includes(4) ? 'boardType active gun' : 'boardType gun' } onClick={this.boardChoose} value={4}>gun</button>
             <button className={ this.state.boardTypeIds.includes(5) ? 'boardType active funboard' : 'boardType funboard' } onClick={this.boardChoose} value={5}>funboard</button>
-            <button className='createBoardButton' onClick={this.createBeach}>CREATE NEW BEACH</button>
           </div>
 
         </form>

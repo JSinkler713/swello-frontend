@@ -39,3 +39,6 @@
 .funboard {
   background-image: url('https://i.imgur.com/mvQ6OtO.png');
 }
+.inputField {
+  display: flex;
+}

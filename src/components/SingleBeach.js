@@ -96,8 +96,9 @@ class SingleBeach extends Component {
       
 
       <div className='hello'>
-        <div>{this.state.beaches[0].name}</div>
+        <h1>{this.state.beaches[0].name}</h1>
         <div>{this.state.beaches[0].description}</div>
+        <div className='allBoardsContainer'>
         {
           this.state.boards.map((board, i)=> {
             return (<div className='boardContainer' key={i}>
@@ -106,6 +107,7 @@ class SingleBeach extends Component {
             </div>)
            })
         }
+        </div>
         <Link  onClick={this.props.updateAppState} to={`/beaches`}>
           Backhome
         </Link>
