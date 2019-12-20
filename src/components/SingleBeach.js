@@ -56,7 +56,9 @@ class SingleBeach extends Component {
   
   deleteBeach = () => {
     let oid = this.props.match.params.id
-    BeachesModel.deleteBeach('/'+oid).then((result) => {
+    let addendum = '/'+oid
+    console.log('addendum is ' + addendum)
+    BeachesModel.deleteBeach(addendum).then((result) => {
       console.log(result)
     })
     this.props.updateAppState()
@@ -73,16 +75,15 @@ class SingleBeach extends Component {
     } 
     console.log('update beach')
     BeachesModel.update(updateBeach, '/'+oid).then((res)=> {
-      console.log(res)
-      this.setState({updatedBeachName:'', updatedBeachDescription:''})
       this.props.updateAppState();
+      this.setState({updatedBeachName:'', updatedBeachDescription:''})
     })
 
   }
 
 
   render(){
-    if (this.state.beaches === null) {
+    if (this.state.beaches === null || this.state.boards === null) {
       return 'loading...'
     } else {
       return (
@@ -99,7 +100,7 @@ class SingleBeach extends Component {
             </div>)
            })
         }
-        <Link  onClick={this.props.updateAppStat} to={`/beaches`}>
+        <Link  onClick={this.props.updateAppState} to={`/beaches`}>
           Backhome
         </Link>
         <button onClick={this.deleteBeach}> Delete beach! </button>
