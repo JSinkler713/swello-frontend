@@ -5,11 +5,19 @@ import BeachesContainer from './containers/BeachesContainer'
 import Home from './components/Home'
 import { Switch, Route } from 'react-router-dom';
 import './containers/BeachesContainer.css' 
+import SingleBeach from './components/SingleBeach'
+
 class App extends Component {
   state= {
-    beaches: null
+    beaches: null,
+    selectedBeachId: null
   }
   
+
+  selectBeach = (e)=> {
+    console.log(e.target.key);
+  }
+
   componentDidMount() {
     this.getAllBeaches()
   }
@@ -32,8 +40,11 @@ class App extends Component {
         <Switch> 
           <Route exact path='/' component={ Home }/>
           <Route exact path='/beaches' render={routerProps=> {
-            return <BeachesContainer getbeaches={this.getAllBeaches}  data={this.state.beaches} />
+            return <BeachesContainer {...routerProps}  selectBeach={this.selectBeach} getbeaches={this.getAllBeaches}  data={this.state.beaches} />
           }} />
+          <Route path='/beaches/:id' render={routerProps=> {
+            return <SingleBeach updateAppState={this.getAllBeaches} beachoid={this.props.oid} {...routerProps} />      
+          }}/>
         </Switch>
       </div>
      )

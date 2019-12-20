@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 class SmallBeachPreview extends Component {
   state = {
 
@@ -8,8 +8,10 @@ class SmallBeachPreview extends Component {
   render(){
 
     return(
-      <div className='smallBeachPreview'>
-        {this.props.name}
+      <div className='smallBeachPreview' onClick={this.props.selectBeach} key={this.props.key}>
+        <Link to={`/beaches/${this.props.oid}`}>
+          {this.props.name}
+        </Link>
       </div>
     )
   }

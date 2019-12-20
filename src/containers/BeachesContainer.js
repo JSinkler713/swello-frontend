@@ -5,8 +5,8 @@ import './BeachesContainer.css'
 
 class BeachesContainer extends Component {
   state = {
-    createBeachName:'newone',
-    createBeachDescription:'such a great beach',
+    createBeachName:'',
+    createBeachDescription:'',
     boardTypeIds:[]
   }
 
@@ -70,18 +70,18 @@ class BeachesContainer extends Component {
   }
 
   render (){
-    if (this.props.data === null) {
+    if (this.props.data === null || this.props.selectBeach === null) {
       return 'loading'
     } else {
       return (
       <div>
-        <Beaches allBeaches={this.props.data} />
+        <Beaches selectBeach={this.props.selectBeach} allBeaches={this.props.data} />
         <h2>
           Add your local beach and share what you shred with there!
         </h2>
         <form type='input'>
-          <input onChange={this.nameChange} id='beachName' placeholder='beach name'></input>
-          <input onChange={this.descChange} id='description' placeholder='description'></input>
+          <input onChange={this.nameChange} id='beachName' placeholder='name here' value={this.state.createBeachName}></input>
+          <input onChange={this.descChange} id='description' placeholder='description' value={this.state.createBeachDescription}></input>
           <p>Choose below which boards you should ride here!</p> 
           <div className="topicsContainer">
             <button className={ this.state.boardTypeIds.includes(1) ? 'boardType active' : 'boardType' } onClick={this.boardChoose} value={1}>Shortboard</button>
