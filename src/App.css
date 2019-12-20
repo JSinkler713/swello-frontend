@@ -1,8 +1,13 @@
 html {
   min-height: -webkit-fill-available
 }
+#root {
+  min-height: fill;
+}
 .hello {
-  min-height: fit-to-screen;
+/*  background-image: url('https://images.pexels.com/photos/1546116/pexels-photo-1546116.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-size: cover;
+  min-height: fit-to-screen; */
 }
 .nav {
   display: flex;
