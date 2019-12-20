@@ -18,7 +18,7 @@ class BeachesModel {
     return fetch(endpoint+extra, {
       method: 'DELETE'
     })
-      .then(response => response.json())
+      .then(response => response)
       .catch(error => console.log('could not delete beach', error))
   };
   

@@ -59,9 +59,12 @@ class SingleBeach extends Component {
     let addendum = '/'+oid
     console.log('addendum is ' + addendum)
     BeachesModel.deleteBeach(addendum).then((result) => {
-      console.log(result)
+      console.log('this is delete',result.status)
+      if (result.status === 200) {
+      this.props.updateAppState()
+      this.props.history.push('/beaches')
+      } else { console.log('no delete')}
     })
-    this.props.updateAppState()
   }
 
   updateBeach = (e)=> {
