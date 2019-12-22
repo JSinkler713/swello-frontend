@@ -11,7 +11,9 @@ class SmallBeachPreview extends Component {
       <div className='smallBeachPreview' onClick={this.props.selectBeach} key={this.props.key}>
         <Link to={`/beaches/${this.props.oid}`}>
           {this.props.name}
-        </Link>
+        </Link><br/>
+        <div className='beachImage'>
+        </div>
       </div>
     )
   }

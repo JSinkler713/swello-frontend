@@ -1,3 +1,17 @@
+#root {
+   height: 100%;
+}
+html, body {
+   background-image: url('https://images.pexels.com/photos/1535421/pexels-photo-1535421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+   background-size: cover;
+ }
+.beachesContainer {
+   background-image: url('https://images.pexels.com/photos/1535421/pexels-photo-1535421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+   background-size: cover;
+ }
+
+
+
 .beachPreviewContainer {
   display:flex;
   flex-wrap: wrap;
@@ -5,14 +19,22 @@
 }
 .smallBeachPreview {
   display: flex;
-  width: 20%;
-  height: 100px;
+  width: 27%;
+  height: 20rem;
   border: 2px solid gray;
   padding: 2%;
-  margin: 2%;
+  margin: 1%;
+  background: gray;
+}
+.beachImage {
+  display: flex;
   background-image: url('https://images.pexels.com/photos/747016/pexels-photo-747016.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
   background-size: cover;
+  width: 80%;
+  height: 60%;
 }
+
+
 
 .fort-Point {
   background-image: url('https://images.pexels.com/photos/345750/pexels-photo-345750.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');

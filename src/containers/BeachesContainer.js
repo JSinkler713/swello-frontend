@@ -75,8 +75,8 @@ class BeachesContainer extends Component {
       return 'loading'
     } else {
       return (
-      <div>
-        <header className='beachesContainer'>Beaches  <Link to='/'>Home</Link></header>
+      <div className='beachesContainer'>
+        <header>Beaches  <Link to='/'>Home</Link></header>
         <Beaches selectBeach={this.props.selectBeach} allBeaches={this.props.data} />
         <h2>
           Add your local beach and share what you shred with there!
