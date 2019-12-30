@@ -19,7 +19,7 @@ html, body {
 }
 .smallBeachPreview {
   display: flex;
-  width: 27%;
+  width: 26%;
   height: 20rem;
   border: 2px solid gray;
   padding: 2%;
