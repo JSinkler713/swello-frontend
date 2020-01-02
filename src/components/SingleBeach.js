@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BeachesModel from '../models/Beaches'
- 
+import './SingleBeach.css'
+
 class SingleBeach extends Component {
   state = {
     boards: null,
@@ -95,10 +96,24 @@ class SingleBeach extends Component {
       return (
       
 
-      <div className='hello'>
-        <h1>{this.state.beaches[0].name}</h1>
-        <div>{this.state.beaches[0].description}</div>
-        <div className='allBoardsContainer'>
+      <div className='container'>
+        <div className='header'>
+          <h1>{this.state.beaches[0].name}</h1>
+        </div>
+        <div className='image'>
+        </div>
+        <div className='description'>{this.state.beaches[0].description}
+        </div>
+        <div className= 'boardtypes'>
+        <div className='boardTypeHeader'>Recommended boards:</div>
+        <div>Funboard</div>
+        <div>Shortboard</div>
+        <div>Fish</div>
+        <div className='boardtype1'></div>
+        <div className='boardtype2'></div>
+        <div className='boardtype3'></div>
+      </div>
+        <div className='specificBoards'>
         {
           this.state.boards.map((board, i)=> {
             return (<div className='boardContainer' key={i}>
